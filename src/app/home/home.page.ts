@@ -35,7 +35,7 @@ export class HomePage {
     this.item.value = "";
   }
 
-  deleteItem(index) {
-    this.afs.collection("item").doc(index).delete();
+  deleteItem(id) {
+    this.afs.collection("item").doc(id).delete();
   }
 }
