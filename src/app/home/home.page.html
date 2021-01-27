@@ -1,20 +1,39 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+  <ion-toolbar color="warning">
+    <ion-title class="ion-text-center"> Crud App </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="main">
+    <ion-input
+      [(ngModel)]="item.value"
+      class="item_input"
+      placeholder="Enter Item"
+    >
+    </ion-input>
+    <div class="ion-text-center">
+      <ion-button
+        class="ion-text-center ion-margin-top"
+        color="warning"
+        (click)="addData()"
+        >Add Item</ion-button
+      >
+    </div>
+    <div
+      class="center_div display_data ion-padding"
+      *ngFor="let item of itemArr; index as index"
+    >
+      <ion-label> {{item.value}} </ion-label>
+      <div class="buttons">
+        <ion-button
+          color="danger"
+          mode="ios"
+          size="small"
+          (click)="deleteItem(index)"
+          >Delete</ion-button
+        >
+      </div>
+    </div>
   </div>
 </ion-content>

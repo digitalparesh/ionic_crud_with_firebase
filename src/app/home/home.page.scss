@@ -25,3 +25,28 @@
 #container a {
   text-decoration: none;
 }
+
+.main {
+  margin-top: 1rem;
+}
+
+.item_input {
+  background-color: #f3f3f3;
+  width: 90vw;
+  text-align: center;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.center_div {
+  margin: auto;
+}
+
+.display_data {
+  margin-top: 1rem;
+  background-color: #f2f2f2;
+  width: 90vw;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
