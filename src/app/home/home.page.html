@@ -6,34 +6,38 @@
 
 <ion-content [fullscreen]="true">
   <div class="main">
-    <ion-input [(ngModel)]="item" class="item_input" placeholder="Enter Item">
+    <ion-input
+      [(ngModel)]="item.value"
+      class="item_input"
+      placeholder="Enter Item"
+    >
     </ion-input>
     <div class="ion-text-center">
       <ion-button
         class="ion-text-center ion-margin-top"
         color="warning"
-        (click)="addData()"
+        (click)="addItem()"
         >Add Item</ion-button
       >
     </div>
     <div
       class="center_div display_data ion-padding"
-      *ngFor="let item of itemArr; index as index"
+      *ngFor="let item of item$ | async"
     >
-      <ion-label> {{item}} </ion-label>
-      <div class="buttons">
-        <!-- <ion-button
-          color="success"
-          mode="ios"
-          size="small"
-          (click)="()"
-          >Edit</ion-button
-        > -->
+      <ion-input class="update_input" [(ngModel)]="item.value"></ion-input>
+      <div class="button_div">
         <ion-button
-          color="danger"
+          mode="ios"
+          color="success"
+          size="small"
+          (click)="updateItem(item.id, item.value)"
+          >Edit</ion-button
+        >
+        <ion-button
           mode="ios"
           size="small"
-          (click)="deleteItem(index)"
+          color="danger"
+          (click)="deleteItem(item.id)"
           >Delete</ion-button
         >
       </div>
