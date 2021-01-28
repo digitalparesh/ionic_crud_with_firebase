@@ -41,6 +41,7 @@ export class HomePage {
 
   addItem() {
     this.afs.collection("item").add(this.item);
+    this.item.value = "";
   }
 
   deleteItem(id) {
