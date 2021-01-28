@@ -43,28 +43,7 @@ export class HomePage {
     // this.afs.collection("item").add(this.item);
   }
 
-  deleteItem(id) {}
-
-  updateItem(id) {}
-
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      cssClass: "my-custom-class",
-      header: "Update Item",
-      subHeader: "",
-      inputs: [
-        {
-          name: "item",
-          type: "text",
-
-          placeholder: "update item",
-        },
-      ],
-      message: "This is an alert message.",
-      buttons: ["Update"],
-      mode: "ios",
-    });
-
-    await alert.present();
+  deleteItem(id) {
+    this.afs.collection("item").doc(id).delete();
   }
 }
