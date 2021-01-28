@@ -6,11 +6,7 @@
 
 <ion-content [fullscreen]="true">
   <div class="main">
-    <ion-input
-      [(ngModel)]="item.value"
-      class="item_input"
-      placeholder="Enter Item"
-    >
+    <ion-input [(ngModel)]="item" class="item_input" placeholder="Enter Item">
     </ion-input>
     <div class="ion-text-center">
       <ion-button
@@ -24,8 +20,15 @@
       class="center_div display_data ion-padding"
       *ngFor="let item of itemArr; index as index"
     >
-      <ion-label> {{item.value}} </ion-label>
+      <ion-label> {{item}} </ion-label>
       <div class="buttons">
+        <ion-button
+          color="success"
+          mode="ios"
+          size="small"
+          (click)="presentAlert()"
+          >Edit</ion-button
+        >
         <ion-button
           color="danger"
           mode="ios"
